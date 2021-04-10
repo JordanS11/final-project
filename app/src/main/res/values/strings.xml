@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">COMP2430FinalProject</string>
+    <string name="reserveButton">Make a Reservation!</string>
 </resources>
