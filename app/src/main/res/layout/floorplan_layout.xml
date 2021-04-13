@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#242B43"
+    android:backgroundTint="#393636"
     >
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#47494A"
-        android:backgroundTint="#393636"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="167dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:layout_marginTop="85dp"
-            android:gravity="left">
+            android:gravity="start">
 
             <Button
                 android:id="@+id/table1"
@@ -41,7 +43,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:layout_marginTop="75dp"
-            android:gravity="left">
+            android:gravity="start">
 
             <Button
                 android:id="@+id/table3"
@@ -62,7 +64,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
             android:layout_marginTop="75dp"
-            android:gravity="left">
+            android:gravity="start">
 
             <Button
                 android:id="@+id/table5"
@@ -78,5 +80,11 @@
                 android:backgroundTint="#4E2929" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2000dp"
+            android:layout_marginTop="7500dp"
+            android:gravity="start"></TableRow>
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

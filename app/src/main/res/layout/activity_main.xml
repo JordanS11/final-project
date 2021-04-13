@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#5C1717"
+    android:backgroundTint="#5C1717">
 
     <FrameLayout
         android:id="@+id/fragmentContainerView"
@@ -14,7 +16,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/menu_layout">
+        tools:layout="@layout/menu_layout"
+        android:background="#5C1717"
+        android:backgroundTint="#5C1717">
     </FrameLayout>
 
 
