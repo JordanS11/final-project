@@ -1,3 +1,4 @@
+![projectBanner](https://user-images.githubusercontent.com/78764928/114941034-9ddb6a80-9e10-11eb-9259-a75801262b22.png)
 # Reservo
 
 The Reservo app simplifies the process of making a reservation at your restaurant. The app is built purely in Kotlin which allows some of the most up to date functions available while remaining available to most devices by supporting a minimum of Android 5.1 Lollipop.
