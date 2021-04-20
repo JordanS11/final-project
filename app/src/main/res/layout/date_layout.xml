@@ -45,4 +45,33 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <TextView
+        android:id="@+id/guestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="1dp"
+        android:text="Guests:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <Spinner
+        android:id="@+id/guestSpinner"
+        android:layout_width="111dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="1dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintStart_toEndOf="@+id/guestNumber"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <TextView
+        android:id="@+id/guestNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        app:layout_constraintStart_toEndOf="@+id/guestTextView"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker"
+        android:visibility="invisible"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

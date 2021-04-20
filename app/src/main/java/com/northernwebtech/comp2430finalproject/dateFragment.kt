@@ -1,21 +1,22 @@
 package com.northernwebtech.comp2430finalproject
 
 
+
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.Fragment
-import android.widget.TimePicker
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.core.os.bundleOf
-import androidx.core.view.get
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
 import com.northernwebtech.comp2430finalproject.databinding.DateLayoutBinding
-import com.northernwebtech.comp2430finalproject.databinding.MenuLayoutBinding
-import java.util.*
 
-class dateFragment : Fragment(R.layout.date_layout), View.OnClickListener{
+
+
+class dateFragment : Fragment(R.layout.date_layout), View.OnClickListener, AdapterView.OnItemSelectedListener{
     companion object{
         fun newInstance(): dateFragment{
             return dateFragment()
@@ -24,32 +25,56 @@ class dateFragment : Fragment(R.layout.date_layout), View.OnClickListener{
     private var _binding: DateLayoutBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //val myView = inflater.inflate(R.layout.date_layout, container, false)
-        //val tp1 = myView.findViewById<View>(R.id.timePicker) as TimePicker
-        //val dateButton = myView.findViewById<View>(R.id.DateButton) as Button
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
         _binding = DateLayoutBinding.inflate(inflater, container, false)
         val myView = binding.root
 
         binding.DateButton.setOnClickListener(this)
-        //var time: String
-        //.setOnTimeChangedListener(TimePicker.OnTimeChangedListener {view: TimePicker?, hourOfDay: Int, minute: Int ->
-            //time = "$hourOfDay:$minute"
+        binding.guestSpinner.onItemSelectedListener = this
 
-          //  setFragmentResult("timeKey", bundleOf("timeBundle" to time))
-        //})
+        ArrayAdapter.createFromResource(
+            requireActivity().applicationContext,
+            R.array.guests_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter -> adapter.setDropDownViewResource(R.layout.guest_spinner)
+            binding.guestSpinner.adapter = adapter
+        }
 
 
 
+            return myView
+    }
 
-        return myView
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+        binding.guestNumber.text = parent.getItemAtPosition(pos).toString()
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>) {
+
     }
 
 
      override fun onClick(v: View?){
          //at this supported API number, only these deprecated functions were available for getting hour and minute
-         val h = binding.timePicker.getCurrentHour().toString()
-         val m = binding.timePicker.getCurrentMinute().toString()
+
+         var h = binding.timePicker.getCurrentHour()
+         if(h > 12){
+             h -= 12
+         }
+         val hour = h.toString()
+         val m = binding.timePicker.getCurrentMinute()
+         val minute: String
+         if(m < 10){
+             minute = "0" + m.toString()
+         }
+         else{
+             minute = m.toString()
+         }
          var month = binding.datePicker.month.toString()
          when(month){
              "0" -> {
@@ -89,18 +114,23 @@ class dateFragment : Fragment(R.layout.date_layout), View.OnClickListener{
                  month = "December"
              }
          }
+
          val day = binding.datePicker.dayOfMonth.toString()
          val time: String
          val date: String
+         val guests: String = binding.guestNumber.text.toString()
          //= binding.timePicker[Calendar.HOUR].toString() + ":" + binding.timePicker[Calendar.MINUTE].toString()
-         time = h + ":" + m
+         time = hour + ":" + minute
          //date = month + "," + day
          date = month + "," + day
          setFragmentResult("timeKey", bundleOf("timeBundle" to time))
          setFragmentResult("dayKey", bundleOf("dayBundle" to date))
+         setFragmentResult("guestKey", bundleOf("guestBundle" to guests))
 
          val fManager = requireActivity().supportFragmentManager
-        fManager.beginTransaction().replace(R.id.fragmentContainerView, floorplanFragment()).addToBackStack(null).commit()
+        fManager.beginTransaction().replace(R.id.fragmentContainerView, floorplanFragment()).addToBackStack(
+            null
+        ).commit()
 
     }
 

@@ -3,11 +3,15 @@
     <string name="reserveButton">Make a Reservation!</string>
     <string name="confirm">Confirm</string>
     <string name="your_reservation">Your Reservation</string>
-    <string name="date">Date:</string>
-    <string name="time">Time</string>
-    <string name="guests">Guests:</string>
+    <string name="date">Date: </string>
+    <string name="time">Time: </string>
+    <string name="guests">For </string>
     <string name="cancel">Cancel</string>
     <string name="my_reservation">My Reservation</string>
     <string name="see_you_soon">see you soon</string>
+    <string name="back">Back</string>
+    <string name="see_you_soon_image">see you soon image</string>
+    <string name="nothing_reserved">Nothing Reserved!</string>
+
 
 </resources>
