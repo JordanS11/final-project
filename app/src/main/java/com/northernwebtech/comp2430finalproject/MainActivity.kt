@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.os.bundleOf
-
+import androidx.room.Room
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,9 +21,5 @@ class MainActivity : AppCompatActivity() {
             val fragment1 = menuFragment.newInstance()
             supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment1).commit()//show fragment
         }
-
-
-        //val fragment = menuFragment.newInstance()
-        //supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, fragment).commit()
     }
 }

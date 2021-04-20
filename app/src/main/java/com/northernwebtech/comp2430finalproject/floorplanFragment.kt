@@ -38,6 +38,39 @@ class floorplanFragment : Fragment(R.layout.floorplan_layout), View.OnClickListe
                 val fManager = requireActivity().supportFragmentManager
                 fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
             }
+            R.id.table2 ->{
+                result = "Table 2"
+                setFragmentResult("tableKey", bundleOf("tableBundle" to result))
+                val fManager = requireActivity().supportFragmentManager
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
+            }
+            R.id.table3 ->{
+                result = "Table 3"
+                setFragmentResult("tableKey", bundleOf("tableBundle" to result))
+                val fManager = requireActivity().supportFragmentManager
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
+            }
+
+            R.id.table4 ->{
+                result = "Table 4"
+                setFragmentResult("tableKey", bundleOf("tableBundle" to result))
+                val fManager = requireActivity().supportFragmentManager
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
+            }
+
+            R.id.table5 ->{
+                result = "Table 5"
+                setFragmentResult("tableKey", bundleOf("tableBundle" to result))
+                val fManager = requireActivity().supportFragmentManager
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
+            }
+
+            R.id.table6 ->{
+                result = "Table 6"
+                setFragmentResult("tableKey", bundleOf("tableBundle" to result))
+                val fManager = requireActivity().supportFragmentManager
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, confirmationFragment()).addToBackStack(null).commit()
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ class menuFragment : Fragment(R.layout.menu_layout), View.OnClickListener{
                 fManager.beginTransaction().replace(R.id.fragmentContainerView, dateFragment()).addToBackStack(null).commit()
             }
             R.id.myReservationButton -> {
-
+                fManager.beginTransaction().replace(R.id.fragmentContainerView, ShowReservationFragment()).addToBackStack(null).commit()
             }
         }
     }
